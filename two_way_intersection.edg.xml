@@ -1,0 +1,8 @@
+<!-- two_way_intersection.edg.xml -->
+<edges>
+    <!-- Define edges for two-way traffic (north-south) -->
+    <edge id="north" from="north0" to="intersection" numLanes="2" speed="13.89"/>
+    <edge id="south" from="south0" to="intersection" numLanes="2" speed="13.89"/>
+    <edge id="intersection_to_north" from="intersection" to="north0" numLanes="2" speed="13.89"/>
+    <edge id="intersection_to_south" from="intersection" to="south0" numLanes="2" speed="13.89"/>
+</edges>

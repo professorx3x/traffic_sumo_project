@@ -1,0 +1,7 @@
+<!-- two_way_intersection.nod.xml -->
+<nodes>
+    <!-- Define nodes for a two-way intersection -->
+    <node id="north0" x="0" y="100" type="priority"/>
+    <node id="south0" x="0" y="-100" type="priority"/>
+    <node id="intersection" x="0" y="0" type="traffic_light"/>
+</nodes>

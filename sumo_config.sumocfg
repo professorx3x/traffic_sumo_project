@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="two_way_intersection.net.xml"/>
+        <route-files value="two_way_intersection.rou.xml"/>
+        <additional-files value="traffic_light.tll.xml"/>
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+
+    <report>
+    <output-prefix value="results"/>
+    <summary-output value="summary.xml"/>
+    <tripinfo-output value="tripinfo.xml"/>
+    <queue-output value="queue.xml"/>
+    <emission-output value="emissions.xml"/>
+</report>
+
+
+</configuration>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-11-09 16:07:38 by Eclipse SUMO netconvert Version 1.21.0
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="two_way_intersection.nod.xml"/>
+        <edge-files value="two_way_intersection.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="two_way_intersection.net.xml"/>
+    </output>
+
+</netconvertConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,100.00" convBoundary="0.00,0.00,0.00,200.00" origBoundary="0.00,-100.00,0.00,100.00" projParameter="!"/>
+
+    <edge id=":intersection_0" function="internal">
+        <lane id=":intersection_0_0" index="0" speed="13.89" length="0.10" shape="-4.80,100.00 -4.80,100.00"/>
+        <lane id=":intersection_0_1" index="1" speed="13.89" length="0.10" shape="-1.60,100.00 -1.60,100.00"/>
+    </edge>
+    <edge id=":intersection_2" function="internal">
+        <lane id=":intersection_2_0" index="0" speed="13.89" length="0.10" shape="4.80,100.00 4.80,100.00"/>
+        <lane id=":intersection_2_1" index="1" speed="13.89" length="0.10" shape="1.60,100.00 1.60,100.00"/>
+    </edge>
+    <edge id=":north0_0" function="internal">
+        <lane id=":north0_0_0" index="0" speed="3.65" length="4.67" shape="1.60,200.00 0.80,201.20 0.00,201.60 -0.80,201.20 -1.60,200.00"/>
+    </edge>
+    <edge id=":south0_0" function="internal">
+        <lane id=":south0_0_0" index="0" speed="3.65" length="4.67" shape="-1.60,0.00 -0.80,-1.20 0.00,-1.60 0.80,-1.20 1.60,0.00"/>
+    </edge>
+
+    <edge id="intersection_to_north" from="intersection" to="north0" priority="-1">
+        <lane id="intersection_to_north_0" index="0" speed="13.89" length="100.00" shape="4.80,100.00 4.80,200.00"/>
+        <lane id="intersection_to_north_1" index="1" speed="13.89" length="100.00" shape="1.60,100.00 1.60,200.00"/>
+    </edge>
+    <edge id="intersection_to_south" from="intersection" to="south0" priority="-1">
+        <lane id="intersection_to_south_0" index="0" speed="13.89" length="100.00" shape="-4.80,100.00 -4.80,0.00"/>
+        <lane id="intersection_to_south_1" index="1" speed="13.89" length="100.00" shape="-1.60,100.00 -1.60,0.00"/>
+    </edge>
+    <edge id="north" from="north0" to="intersection" priority="-1">
+        <lane id="north_0" index="0" speed="13.89" length="100.00" shape="-4.80,200.00 -4.80,100.00"/>
+        <lane id="north_1" index="1" speed="13.89" length="100.00" shape="-1.60,200.00 -1.60,100.00"/>
+    </edge>
+    <edge id="south" from="south0" to="intersection" priority="-1">
+        <lane id="south_0" index="0" speed="13.89" length="100.00" shape="4.80,0.00 4.80,100.00"/>
+        <lane id="south_1" index="1" speed="13.89" length="100.00" shape="1.60,0.00 1.60,100.00"/>
+    </edge>
+
+    <tlLogic id="intersection" type="static" programID="0" offset="0">
+        <phase duration="82" state="GGGG"/>
+        <phase duration="3"  state="yyyy"/>
+        <phase duration="5"  state="rrrr"/>
+    </tlLogic>
+
+    <junction id="intersection" type="traffic_light" x="0.00" y="100.00" incLanes="north_0 north_1 south_0 south_1" intLanes=":intersection_0_0 :intersection_0_1 :intersection_2_0 :intersection_2_1" shape="-6.40,100.00 6.40,100.00 -6.40,100.00">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="north0" type="priority" x="0.00" y="200.00" incLanes="intersection_to_north_0 intersection_to_north_1" intLanes=":north0_0_0" shape="0.00,200.00 6.40,200.00 0.00,200.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="south0" type="priority" x="0.00" y="0.00" incLanes="intersection_to_south_0 intersection_to_south_1" intLanes=":south0_0_0" shape="0.00,0.00 -6.40,0.00 0.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <connection from="intersection_to_north" to="north" fromLane="1" toLane="1" via=":north0_0_0" dir="t" state="M"/>
+    <connection from="intersection_to_south" to="south" fromLane="1" toLane="1" via=":south0_0_0" dir="t" state="M"/>
+    <connection from="north" to="intersection_to_south" fromLane="0" toLane="0" via=":intersection_0_0" tl="intersection" linkIndex="0" dir="s" state="O"/>
+    <connection from="north" to="intersection_to_south" fromLane="1" toLane="1" via=":intersection_0_1" tl="intersection" linkIndex="1" dir="s" state="O"/>
+    <connection from="south" to="intersection_to_north" fromLane="0" toLane="0" via=":intersection_2_0" tl="intersection" linkIndex="2" dir="s" state="O"/>
+    <connection from="south" to="intersection_to_north" fromLane="1" toLane="1" via=":intersection_2_1" tl="intersection" linkIndex="3" dir="s" state="O"/>
+
+    <connection from=":intersection_0" to="intersection_to_south" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":intersection_0" to="intersection_to_south" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":intersection_2" to="intersection_to_north" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":intersection_2" to="intersection_to_north" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":north0_0" to="north" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":south0_0" to="south" fromLane="0" toLane="1" dir="t" state="M"/>
+
+</net>

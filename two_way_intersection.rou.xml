@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <vType id="car" accel="1.0" decel="4.5" maxSpeed="16.67" length="5"/>
+
+    <!-- Vehicle flows for each direction -->
+    <flow id="north_south_flow" type="car" begin="0" end="3600" number="1000" from="north" to="intersection_to_south"/>
+    <flow id="south_north_flow" type="car" begin="0" end="3600" number="1000" from="south" to="intersection_to_north"/>
+    <flow id="intersection_to_north_flow" type="car" begin="0" end="3600" number="700" from="intersection_to_north" to="north"/>
+    <flow id="intersection_to_south_flow" type="car" begin="0" end="3600" number="700" from="intersection_to_south" to="south"/>
+</routes>
