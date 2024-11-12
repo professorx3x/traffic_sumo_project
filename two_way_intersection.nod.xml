@@ -1,7 +1,8 @@
-<!-- two_way_intersection.nod.xml -->
-<nodes>
-    <!-- Define nodes for a two-way intersection -->
-    <node id="north0" x="0" y="100" type="priority"/>
-    <node id="south0" x="0" y="-100" type="priority"/>
-    <node id="intersection" x="0" y="0" type="traffic_light"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <node id="north" x="0" y="100" type="priority"/>
+    <node id="south" x="0" y="-100" type="priority"/>
+    <node id="east" x="100" y="0" type="priority"/>
+    <node id="west" x="-100" y="0" type="priority"/>
+    <node id="center" x="0" y="0" type="traffic_light"/> 
 </nodes>

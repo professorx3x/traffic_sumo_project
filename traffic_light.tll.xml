@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tlLogic id="intersection" type="static" programID="two_phase" offset="0">
-    <!-- North-South direction -->
-    <phase duration="30" state="GGrr"/>
-    <phase duration="5" state="yyrr"/>
-    <phase duration="25" state="rrrr"/>
-
-    <!-- East-West direction -->
-    <phase duration="30" state="rrGG"/>
-    <phase duration="5" state="rryy"/>
-    <phase duration="25" state="rrrr"/>
-</tlLogic>
-
+<additional>
+    <tlLogic id="center" type="static" programID="2phase" offset="0">
+        <!-- Phase 1: North-South -->
+        <phase duration="30" state="GGGggrrrrrGGGggrrrrr"/> <!-- North-South green -->
+        <phase duration="5" state="yyyyyrrrrryyyyyrrrrr"/>  <!-- North-South yellow -->
+        
+        <!-- Phase 2: East-West -->
+        <phase duration="30" state="rrrrrGGGggrrrrrGGGgg"/> <!-- East-West green -->
+        <phase duration="5" state="rrrrryyyyyrrrrryyyyy"/>  <!-- East-West yellow -->
+    </tlLogic>
+</additional>
