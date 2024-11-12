@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- Define vehicle type -->
+    <vType id="car" accel="1.0" decel="1.5" maxSpeed="50" length="5"/>
+
+    <!-- Define vehicle flows -->
+    <flow id="north_south" type="car" from="north_in" to="south_out" begin="0" end="3600" vehsPerHour="1000"/>
+    <flow id="south_north" type="car" from="south_in" to="north_out" begin="0" end="3600" vehsPerHour="1000"/>
+    <flow id="east_west" type="car" from="east_in" to="west_out" begin="0" end="3600" vehsPerHour="700"/>
+    <flow id="west_east" type="car" from="west_in" to="east_out" begin="0" end="3600" vehsPerHour="700"/>
+
+    <!-- Add any additional flows for turning movements if needed -->
+    <flow id="north_east" type="car" from="north_in" to="east_out" begin="0" end="3600" vehsPerHour="300"/>
+    <flow id="south_west" type="car" from="south_in" to="west_out" begin="0" end="3600" vehsPerHour="300"/>
+    <flow id="east_north" type="car" from="east_in" to="north_out" begin="0" end="3600" vehsPerHour="200"/>
+    <flow id="west_south" type="car" from="west_in" to="south_out" begin="0" end="3600" vehsPerHour="200"/>
+</routes>
+

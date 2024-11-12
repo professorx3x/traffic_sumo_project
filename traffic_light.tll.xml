@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <additional>
-    <tlLogic id="center" type="static" programID="2phase" offset="0">
-        <!-- Phase 1: North-South -->
-        <phase duration="30" state="GGGggrrrrrGGGggrrrrr"/> <!-- North-South green -->
-        <phase duration="5" state="yyyyyrrrrryyyyyrrrrr"/>  <!-- North-South yellow -->
-        
-        <!-- Phase 2: East-West -->
-        <phase duration="30" state="rrrrrGGGggrrrrrGGGgg"/> <!-- East-West green -->
-        <phase duration="5" state="rrrrryyyyyrrrrryyyyy"/>  <!-- East-West yellow -->
-    </tlLogic>
+<!--  Four-Phase Traffic Light Setup for Exercise 1.2  -->
+<tlLogic id="center" type="static" programID="4phase" offset="0">
+<!--  Phase 1: Northbound Green  -->
+<phase duration="15" state="GGGggrrrrrrrrrrrrrrr"/>
+<!--  Northbound green, others red  -->
+<phase duration="5" state="yyyyyrrrrrrrrrrrrrrr"/>
+<!--  Northbound yellow, others red  -->
+<!--  Phase 2: Southbound Green  -->
+<phase duration="15" state="rrrrrGGGggrrrrrrrrrr"/>
+<!--  Southbound green, others red  -->
+<phase duration="5" state="rrrrryyyyyrrrrrrrrrr"/>
+<!--  Southbound yellow, others red  -->
+<!--  Phase 3: Eastbound Green  -->
+<phase duration="15" state="rrrrrrrrrrGGGggrrrrr"/>
+<!--  Eastbound green, others red  -->
+<phase duration="5" state="rrrrrrrrrryyyyyrrrrr"/>
+<!--  Eastbound yellow, others red  -->
+<!--  Phase 4: Westbound Green  -->
+<phase duration="15" state="rrrrrrrrrrrrrrGGGggr"/>
+<!--  Westbound green, others red  -->
+<phase duration="5" state="rrrrrrrrrrrrrryyyyyr"/>
+<!--  Westbound yellow, others red  -->
+</tlLogic>
 </additional>
+
+
+

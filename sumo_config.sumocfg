@@ -3,8 +3,8 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="two_way_intersection.net.xml"/>
-        <route-files value="two_way_intersection.rou.xml"/>
+        <net-file value="four_way_intersection.net.xml"/>
+        <route-files value="four_way_intersection.rou.xml"/>
         <additional-files value="traffic_light.tll.xml"/>
     </input>
 
